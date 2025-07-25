@@ -129,3 +129,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+cd ()
+{
+        if [ -n "$1" ]; then
+                builtin cd "$@" && ls
+        else
+                builtin cd ~ && ls
+        fi
+}
