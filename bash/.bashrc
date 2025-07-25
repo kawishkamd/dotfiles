@@ -110,6 +110,11 @@ alias downs='cd ~/Downloads'
 alias vids='cd ~/Videos'
 alias pics='cd ~/Pictures'
 
+# Apt
+alias aupdate='sudo apt update'
+alias aupgrade='sudo apt upgrade'
+alias ainstall='sudo apt install'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
