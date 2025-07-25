@@ -55,10 +55,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up l
-set $down k
-set $left j
-set $right semicolon
+#set $up l
+#set $down k
+#set $left j
+#set $right semicolon
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
@@ -216,6 +216,7 @@ bindsym $mod+Tab workspace next
 # finds out, if available)
 bar {
         status_command i3blocks
+	font pango:JetBrainsMonoNerdFont 8
 }
 
 exec --no-startup-id picom -b
