@@ -20,6 +20,9 @@ PROMPT_COMMAND='history -a'
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# Show auto-completion list automatically, without double tab
+if [[ $iatest -gt 0 ]]; then bind "set show-all-if-ambiguous On"; fi
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
