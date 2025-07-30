@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Make sure to set this file as executable: chmod +x ~/.config/i3/scripts/blur-lock
+# Required packages: scrot, imagemagick (v6)
+
+# CONFIGURATION
+PICTURE="/tmp/i3lock.png"
+BLUR_TYPE="blur"    # options: blur, pixelate
+BLUR_LEVEL="0x8"    # used if BLUR_TYPE=blur
+ICON="$HOME/.config/i3/lock-icon.png"  # optional overlay icon
+LOCK_CMD="i3lock --nofork -i $PICTURE"
+
+# Take screenshot
+sleep 0.2
+scrot "$PICTURE"
+
+# Blur or pixelate
+case "$BLUR_TYPE" in
+  blur)
+    convert "$PICTURE" -blur "$BLUR_LEVEL" "$PICTURE"
+    ;;
+  pixelate)
+    convert "$PICTURE" -scale 10% -scale 1000% "$PICTURE"
+    ;;
+  *)
+    echo "Unknown blur type: $BLUR_TYPE"
+    exit 1
+    ;;
+esac
+
+# Overlay icon if exists
+if [[ -f "$ICON" ]]; then
+  convert "$PICTURE" "$ICON" -gravity center -composite "$PICTURE"
+fi
+
+# Lock and clean up
+$LOCK_CMD
+rm -f "$PICTURE"
