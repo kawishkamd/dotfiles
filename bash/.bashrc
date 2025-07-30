@@ -115,6 +115,10 @@ alias aupdate='sudo apt update'
 alias aupgrade='sudo apt upgrade'
 alias ainstall='sudo apt install'
 
+#Aria2c
+alias amagnet='aria2c --enable-rpc --save-session=session.txt --continue=true'
+alias aresume='aria2c --input-file=session.txt --continue=true'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
