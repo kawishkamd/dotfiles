@@ -11,7 +11,7 @@ ICON="$HOME/.config/i3/lock-icon.png"  # optional overlay icon
 LOCK_CMD="i3lock --nofork -i $PICTURE"
 
 # Take screenshot
-sleep 0.5
+sleep 0.2
 scrot "$PICTURE"
 
 # Blur or pixelate
