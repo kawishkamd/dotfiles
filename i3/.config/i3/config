@@ -222,4 +222,5 @@ bar {
 	font pango:JetBrainsMonoNerdFont 8
 }
 
-exec --no-startup-id picom -b
+#exec --no-startup-id picom --experimental-backends -b
+exec --no-startup-id picom --experimental-backends -b --config ~/.config/picom/picom.conf
