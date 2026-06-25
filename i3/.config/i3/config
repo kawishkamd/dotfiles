@@ -18,8 +18,8 @@ font pango:JetBrains Mono Nerd Font 8
 
 default_border none
 
-gaps inner -1
-gaps outer -1
+gaps inner 0
+gaps outer 0
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -47,7 +47,7 @@ bindsym Print exec --no-startup-id flameshot gui
 # exec --no-startup-id nm-applet
 
 # Wallpaper
-exec_always --no-startup-id feh --randomize --bg-fill --slideshow-delay 1 ~/.config/.wall/*
+exec_always --no-startup-id feh --randomize --bg-fill --slideshow-delay 3600 ~/.config/.wall/*
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -58,10 +58,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-#set $up l
-#set $down k
-#set $left j
-#set $right semicolon
+set $left j
+set $down k
+set $up l
+set $right semicolon
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
