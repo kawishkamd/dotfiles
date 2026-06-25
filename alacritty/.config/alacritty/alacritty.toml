@@ -14,7 +14,7 @@ family = "JetBrains Mono Nerd Font"
 style = "Italic"
 
 [window]
-opacity = 0
+opacity = 1.0
 decorations = "None"
 
 [cursor]
@@ -28,3 +28,6 @@ blinking = "Always"
 
 [mouse]
 hide_when_typing = true
+
+[terminal]
+shell = "/bin/bash"
