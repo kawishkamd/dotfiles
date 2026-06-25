@@ -119,8 +119,10 @@ alias ainstall='sudo apt install'
 alias amagnet='aria2c --enable-rpc --save-session=session.txt --continue=true'
 alias aresume='aria2c --input-file=session.txt --continue=true'
 
-# SSH
+# SSH - only set TERM if not inside tmux or screen (they set their own TERM)
+if [[ -z "$TMUX" && "$TERM" != screen* ]]; then
 export TERM=xterm-256color
+fi
 alias ssh="TERM=xterm-256color ssh"
 alias proxychains4="TERM=xterm-256color proxychains4"
 
