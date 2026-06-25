@@ -7,8 +7,15 @@
 PICTURE="/tmp/i3lock.png"
 BLUR_TYPE="blur"    # options: blur, pixelate
 BLUR_LEVEL="0x8"    # used if BLUR_TYPE=blur
-ICON="$HOME/.config/i3/lock-icon.png"  # optional overlay icon
+ICON="$HOME/.config/i3/lock-icon.png"  # optional overlay icon — not in dotfiles repo, add manually
 LOCK_CMD="i3lock --nofork -i $PICTURE"
+
+# Detect ImageMagick version (v6 uses 'convert', v7 uses 'magick')
+if command -v magick &>/dev/null; then
+    IM="magick"
+else
+    IM="convert"
+fi
 
 # Take screenshot
 sleep 0.2
@@ -17,10 +24,10 @@ scrot "$PICTURE"
 # Blur or pixelate
 case "$BLUR_TYPE" in
   blur)
-    convert "$PICTURE" -blur "$BLUR_LEVEL" "$PICTURE"
+    $IM "$PICTURE" -blur "$BLUR_LEVEL" "$PICTURE"
     ;;
   pixelate)
-    convert "$PICTURE" -scale 10% -scale 1000% "$PICTURE"
+    $IM "$PICTURE" -scale 10% -scale 1000% "$PICTURE"
     ;;
   *)
     echo "Unknown blur type: $BLUR_TYPE"
@@ -30,7 +37,7 @@ esac
 
 # Overlay icon if exists
 if [[ -f "$ICON" ]]; then
-  convert "$PICTURE" "$ICON" -gravity center -composite "$PICTURE"
+  $IM "$PICTURE" "$ICON" -gravity center -composite "$PICTURE"
 fi
 
 # Lock and clean up
