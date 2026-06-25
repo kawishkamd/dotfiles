@@ -71,7 +71,7 @@ floating_modifier Mod1
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod1+Return exec i3-sensible-terminal
+bindsym Mod1+Return exec alacritty
 
 # kill focused window
 bindsym Mod1+Shift+q kill
@@ -223,4 +223,4 @@ bar {
 }
 
 #exec --no-startup-id picom --experimental-backends -b
-exec --no-startup-id picom --experimental-backends -b --config ~/.config/picom/picom.conf
+exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
