@@ -124,6 +124,11 @@ export TERM=xterm-256color
 alias ssh="TERM=xterm-256color ssh"
 alias proxychains4="TERM=xterm-256color proxychains4"
 
+#Power
+alias suspend="systemctl suspend"
+alias poweroff="systemctl poweroff"
+alias reboot="systemctl reboot"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
