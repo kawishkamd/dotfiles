@@ -14,7 +14,7 @@ family = "JetBrains Mono Nerd Font"
 style = "Italic"
 
 [window]
-opacity = 0.60
+opacity = 0
 decorations = "None"
 
 [cursor]
