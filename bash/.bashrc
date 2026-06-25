@@ -120,7 +120,9 @@ alias amagnet='aria2c --enable-rpc --save-session=session.txt --continue=true'
 alias aresume='aria2c --input-file=session.txt --continue=true'
 
 # SSH
+export TERM=xterm-256color
 alias ssh="TERM=xterm-256color ssh"
+alias proxychains4="TERM=xterm-256color proxychains4"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
